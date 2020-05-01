@@ -16,10 +16,13 @@
   "scripts": {
     "test": "npm run unit && npm run lint",
     "unit": "NODE_ENV=test mocha",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
-    "lodash": "^4.13.1"
+    "lodash": "^4.13.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "chai": "^3.0.0",
@@ -40,5 +43,6 @@
   },
   "pre-commit": [
     "test"
-  ]
+  ],
+  "snyk": true
 }
